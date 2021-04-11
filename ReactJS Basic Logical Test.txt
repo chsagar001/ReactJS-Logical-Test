@@ -1,0 +1,79 @@
+QUESTION 1
+// creates an array having elements 10,20,30,40,50
+
+var house = newArray(10,20,30,40,50); 
+
+
+// write a for loop that will print only even numbers from an array:
+// for example: question0([6,78,35,20,77]) >> [6,78,20]
+
+
+function question0(array){
+  let arr = [];
+  for (let i = 0; i < array.length; i++){
+    if (array[i] % 2 === 0){
+      arr.push(array[i]);
+    }
+  }
+  return arr;
+}
+
+QUESTION 2
+
+
+//Find the maximum consecutive 1's in an array of 0's and 1's.
+
+var findMaxConsecutiveOnes = function(nums) {
+    let largestCount = 0;
+    let currentCount = 0;
+    for (let i = 0; i<nums.length; i++) {
+        if (nums[i] === 0) {
+            currentCount = 0;
+        } else {
+            currentCount++;
+        };
+        if (currentCount > largestCount) largestCount = currentCount;
+    };
+    return largestCount;
+};
+
+QUESTION 3
+
+// Write a js code to find the repeated number.
+const a = [4,1,6,3,2,2,5]
+
+function count_duplicate(a){
+ let counts = {}
+
+ for(let i =0; i < a.length; i++){ 
+     if (counts[a[i]]){
+     counts[a[i]] += 1
+     } else {
+     counts[a[i]] = 1
+     }
+    }  
+    for (let prop in counts){
+        if (counts[prop] >= 2){
+            console.log(prop + " counted: " + counts[prop] + " times.")
+        }
+    }
+  console.log(counts)
+}
+
+count_duplicate(a)
+
+
+
+
+QUESTION 4
+
+// Write a sample code to call rest api and display the result.
+
+
+fetch('www.example.com/api/get/1')
+  .then(response => {
+    return response.json();
+  })
+  .then(users => {
+   console.log(users);
+  }); 
